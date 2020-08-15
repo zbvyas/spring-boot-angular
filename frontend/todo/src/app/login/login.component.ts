@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   username = 'defaultusername'
   password = ''
   errorMessage = 'Invalid Credentials'
-  invalidLogin = false
+  validLogin = true
 
   constructor(
     private router: Router,
@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
   }
 
   handleLogin() {
-    this.invalidLogin = this.hardcodedAuthService.authenticate(this.username, this.password);
-    if(!this.invalidLogin) {
+    this.validLogin = this.hardcodedAuthService.authenticate(this.username, this.password);
+    if(this.validLogin) {
       // route to welcome
       this.router.navigate(['welcome', this.username]);
     }
