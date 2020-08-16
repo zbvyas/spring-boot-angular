@@ -1,5 +1,24 @@
+<div hidden>
+  {{ welcome$ | async }}
+</div>
+
 <h1>Welcome!</h1>
 
 <div class="container">
   Welcome {{ name }}. You can manage your todos <a routerLink="/todos">here</a>
+</div>
+
+<div class="container">
+  Click here to get a customized welcome message
+  <button (click)="getWelcomeMessage()" class="btn btn-success">Get Welcome Message</button>
+  <button (click)="getWelcomeMessageWithParam()" class="btn btn-success">Get Welcome Message with Params</button>
+</div>
+
+<div class="container" *ngIf="welcomeMessage">
+  <h1>Your Customized Welcome Message</h1>
+  {{ welcomeMessage }}
+</div>
+
+<div class="alert alert-danger" *ngIf="errorMessage">
+  {{ errorMessage }}
 </div>
