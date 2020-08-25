@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoDataService } from '../service/data/todo-data.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Todo } from '../list-todos/list-todos.component';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
@@ -19,6 +19,7 @@ export class TodoComponent implements OnInit {
 
   constructor(
     private todoService: TodoDataService,
+    private router: Router,
     private route: ActivatedRoute
   ) { }
 
@@ -30,7 +31,9 @@ export class TodoComponent implements OnInit {
   }
 
   saveTodo() {
-    
+    this.onSave$ = this.todoService.saveTodo('defaultusername', this.todo).pipe(
+      tap(success => this.router.navigate(['todos']))
+    )
   }
 
 }

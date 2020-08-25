@@ -22,4 +22,12 @@ export class TodoDataService {
     return this.http.get<Todo>(`http://localhost:8080/users/${username}/todos/${id}`);
   }
 
+  saveTodo(username: string, todo: Todo) {
+    if(todo.id) {
+      return this.http.put(`http://localhost:8080/users/${username}/todos/${todo.id}`, todo);
+    } else {
+      return this.http.post(`http://localhost:8080/users/${username}/todos`, todo);
+    }
+  }
+
 }

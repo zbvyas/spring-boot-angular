@@ -14,13 +14,27 @@ public class TodoHardcodedService {
     private static int idCounter = 0;
 
     static {
-        todos.add(new Todo(idCounter++, "defaultusername", "Learn Spring Boot", new Date(), false));
-        todos.add(new Todo(idCounter++, "defaultusername", "Learn Microservices", new Date(), false));
-        todos.add(new Todo(idCounter++, "defaultusername", "Learn Angular", new Date(), false));
+        todos.add(new Todo(++idCounter, "defaultusername", "Learn Spring Boot", new Date(), false));
+        todos.add(new Todo(++idCounter, "defaultusername", "Learn Microservices", new Date(), false));
+        todos.add(new Todo(++idCounter, "defaultusername", "Learn Angular", new Date(), false));
     }
 
     public List<Todo> findAll() {
         return todos;
+    }
+
+    public Todo save(Todo todo) {
+        if(todo.getId() == -1 || todo.getId() == 0) {
+            // CREATE
+            todo.setId(++idCounter);
+            todos.add(todo);
+        } else {
+            // UPDATE
+            // because this is a hardcoded list, we can just delete the recreate for now
+            deleteById(todo.getId());
+            todos.add(todo);
+        }
+        return todo;
     }
 
     public Todo deleteById(long id) {
