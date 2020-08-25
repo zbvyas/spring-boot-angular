@@ -25,9 +25,12 @@ export class TodoComponent implements OnInit {
 
   ngOnInit() {
     let id = this.route.snapshot.params['id'];
-    this.todo$ = this.todoService.retrieveTodo('defaultusername', id).pipe(
-      tap(data => this.todo = data)
-    );
+    this.todo = new Todo(id, '', false, new Date());
+    if(id) {
+      this.todo$ = this.todoService.retrieveTodo('defaultusername', id).pipe(
+        tap(data => this.todo = data)
+      );
+    }
   }
 
   saveTodo() {

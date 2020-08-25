@@ -1,10 +1,11 @@
 <div hidden>
-  {{ onSave$ | async }}
+  {{ onSave$  | async }}
+  {{ todo$    | async }}
 </div>
 
 <h1>Todo</h1>
 
-<div class="container" *ngIf="todo$ | async">
+<div class="container">
   <fieldset class="form-group">
     <label>Description</label>
     <input type="text" [(ngModel)]="todo.description" class="form-control" name="description" required>
