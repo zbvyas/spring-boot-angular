@@ -27,16 +27,7 @@ export class WelcomeComponent implements OnInit {
   }
 
   getWelcomeMessage() {
-    this.welcome$ = this.welcomeService.executeHelloWorldBeanService().pipe(
-      tap(
-        success => { this.welcomeMessage = success.message },
-        error => { this.errorMessage = error.error.message }
-      )
-    );
-  }
-
-  getWelcomeMessageWithParam() {
-    this.welcome$ = this.welcomeService.executeHelloWorldBeanServiceWithPathVariable(this.name).pipe(
+    this.welcome$ = this.welcomeService.executeBasicAuth(this.name).pipe(
       tap(
         success => { this.welcomeMessage = success.message },
         error => { this.errorMessage = error.error.message }
