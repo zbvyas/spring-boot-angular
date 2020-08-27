@@ -11,7 +11,7 @@ public class TodoHardcodedService {
 
     // acts as the hardcoded database until we wire up JPA and Hibernate
     private static List<Todo> todos = new ArrayList();
-    private static int idCounter = 0;
+    private static long idCounter = 0;
 
     static {
         todos.add(new Todo(++idCounter, "defaultusername", "Learn Spring Boot", new Date(), false));
