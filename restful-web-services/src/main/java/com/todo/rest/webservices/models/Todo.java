@@ -1,4 +1,4 @@
-package com.todo.rest.webservices.restfulwebservices.todo;
+package com.todo.rest.webservices.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

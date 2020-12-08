@@ -1,6 +1,6 @@
-package com.todo.rest.webservices.restfulwebservices.basic.auth;
+package com.todo.rest.webservices.config;
 
-public class AuthenticationBean {
+public class HelloWorldBean {
 
     private String message;
 
@@ -17,7 +17,7 @@ public class AuthenticationBean {
         return String.format("HelloWorldBean [message=%s]", message);
     }
 
-    public AuthenticationBean(String message) {
+    public HelloWorldBean(String message) {
         this.message = message;
     }
 }

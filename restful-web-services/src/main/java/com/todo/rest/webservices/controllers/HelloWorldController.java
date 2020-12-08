@@ -1,5 +1,6 @@
-package com.todo.rest.webservices.restfulwebservices.helloworld;
+package com.todo.rest.webservices.controllers;
 
+import com.todo.rest.webservices.config.HelloWorldBean;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

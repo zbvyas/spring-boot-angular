@@ -1,5 +1,7 @@
-package com.todo.rest.webservices.restfulwebservices.todo;
+package com.todo.rest.webservices.controllers;
 
+import com.todo.rest.webservices.models.Todo;
+import com.todo.rest.webservices.services.TodoHardcodedService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +13,7 @@ import java.util.List;
 
 @CrossOrigin(origins="http://localhost:4200")
 @RestController
-public class TodoResource {
+public class TodoResourceController {
 
     @Autowired
     private TodoHardcodedService todoService;
