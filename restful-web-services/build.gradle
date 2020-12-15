@@ -23,8 +23,7 @@ dependencies {
     runtimeOnly 'org.springframework.boot:spring-boot-devtools:2.2.9.RELEASE'
     runtimeOnly 'com.h2database:h2:1.4.200'
     testImplementation 'org.springframework.boot:spring-boot-starter-test:2.2.9.RELEASE'
-    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
-    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0'
+    compile 'org.springdoc:springdoc-openapi-ui:1.2.32'
 }
 
 group = 'com.todo.rest.webservices'
